@@ -14,6 +14,7 @@
 		4A55EB8A1BC5ADED00581A35 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A55EB881BC5ADED00581A35 /* LaunchScreen.xib */; };
 		4A55EB961BC5ADEE00581A35 /* hw2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A55EB951BC5ADEE00581A35 /* hw2Tests.swift */; };
 		4A55EBA21BC5B63200581A35 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A55EBA11BC5B63200581A35 /* CollectionViewController.swift */; };
+		4A55EBA41BC5D24400581A35 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A55EBA31BC5D24400581A35 /* Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		4A55EB941BC5ADEE00581A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A55EB951BC5ADEE00581A35 /* hw2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hw2Tests.swift; sourceTree = "<group>"; };
 		4A55EBA11BC5B63200581A35 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		4A55EBA31BC5D24400581A35 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cell.swift; path = hw2/Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		4A55EB711BC5ADED00581A35 = {
 			isa = PBXGroup;
 			children = (
+				4A55EBA31BC5D24400581A35 /* Cell.swift */,
 				4A55EB7C1BC5ADED00581A35 /* hw2 */,
 				4A55EB921BC5ADEE00581A35 /* hw2Tests */,
 				4A55EB7B1BC5ADED00581A35 /* Products */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A55EBA21BC5B63200581A35 /* CollectionViewController.swift in Sources */,
+				4A55EBA41BC5D24400581A35 /* Cell.swift in Sources */,
 				4A55EB821BC5ADED00581A35 /* ViewController.swift in Sources */,
 				4A55EB801BC5ADED00581A35 /* AppDelegate.swift in Sources */,
 			);

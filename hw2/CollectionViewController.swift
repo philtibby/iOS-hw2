@@ -8,12 +8,14 @@
 
 import UIKit
 
-let reuseIdentifier = "Cell"
+let reuseIdentifier = "DayCell"
 
-class CollectionViewController: UICollectionViewController {
+class CollectionViewController: UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("This shit works");
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
