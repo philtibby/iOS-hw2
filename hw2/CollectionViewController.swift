@@ -15,9 +15,6 @@ var tableData: [String] = ["1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "
 
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
