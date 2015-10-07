@@ -39,7 +39,7 @@
 		4A55EB941BC5ADEE00581A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A55EB951BC5ADEE00581A35 /* hw2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hw2Tests.swift; sourceTree = "<group>"; };
 		4A55EBA11BC5B63200581A35 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		4A55EBA31BC5D24400581A35 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cell.swift; path = hw2/Cell.swift; sourceTree = "<group>"; };
+		4A55EBA31BC5D24400581A35 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,6 @@
 		4A55EB711BC5ADED00581A35 = {
 			isa = PBXGroup;
 			children = (
-				4A55EBA31BC5D24400581A35 /* Cell.swift */,
 				4A55EB7C1BC5ADED00581A35 /* hw2 */,
 				4A55EB921BC5ADEE00581A35 /* hw2Tests */,
 				4A55EB7B1BC5ADED00581A35 /* Products */,
@@ -82,6 +81,7 @@
 		4A55EB7C1BC5ADED00581A35 /* hw2 */ = {
 			isa = PBXGroup;
 			children = (
+				4A55EBA31BC5D24400581A35 /* Cell.swift */,
 				4A55EB7F1BC5ADED00581A35 /* AppDelegate.swift */,
 				4A55EB811BC5ADED00581A35 /* ViewController.swift */,
 				4A55EBA11BC5B63200581A35 /* CollectionViewController.swift */,
