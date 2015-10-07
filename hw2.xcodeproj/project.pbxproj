@@ -13,6 +13,7 @@
 		4A55EB871BC5ADED00581A35 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A55EB861BC5ADED00581A35 /* Images.xcassets */; };
 		4A55EB8A1BC5ADED00581A35 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A55EB881BC5ADED00581A35 /* LaunchScreen.xib */; };
 		4A55EB961BC5ADEE00581A35 /* hw2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A55EB951BC5ADEE00581A35 /* hw2Tests.swift */; };
+		4A55EBA21BC5B63200581A35 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A55EBA11BC5B63200581A35 /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		4A55EB8F1BC5ADEE00581A35 /* hw2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hw2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A55EB941BC5ADEE00581A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A55EB951BC5ADEE00581A35 /* hw2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hw2Tests.swift; sourceTree = "<group>"; };
+		4A55EBA11BC5B63200581A35 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				4A55EB7F1BC5ADED00581A35 /* AppDelegate.swift */,
 				4A55EB811BC5ADED00581A35 /* ViewController.swift */,
+				4A55EBA11BC5B63200581A35 /* CollectionViewController.swift */,
 				4A55EB831BC5ADED00581A35 /* Main.storyboard */,
 				4A55EB861BC5ADED00581A35 /* Images.xcassets */,
 				4A55EB881BC5ADED00581A35 /* LaunchScreen.xib */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A55EBA21BC5B63200581A35 /* CollectionViewController.swift in Sources */,
 				4A55EB821BC5ADED00581A35 /* ViewController.swift in Sources */,
 				4A55EB801BC5ADED00581A35 /* AppDelegate.swift in Sources */,
 			);
@@ -409,6 +413,7 @@
 				4A55EB9B1BC5ADEE00581A35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A55EB9C1BC5ADEE00581A35 /* Build configuration list for PBXNativeTarget "hw2Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				4A55EB9E1BC5ADEE00581A35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
