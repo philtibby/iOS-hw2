@@ -46,7 +46,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         }
         
         func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-            println("Cell \(indexPath.row) selected")
+            print("Cell \(indexPath.row) selected")
         }
     
     
