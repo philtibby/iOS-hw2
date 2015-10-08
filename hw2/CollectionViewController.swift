@@ -10,14 +10,20 @@ import UIKit
 
 let reuseIdentifier = "DayCell";
 
-var tableData: [String] = ["1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3"];
+//var tableData: [String] = ["1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3"];
+var tableData: [String] = [];
 
 
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for (var i = 1; i <= 31; ++i) {
+            tableData.append(String(i));
+        }
         
         print("This shit works");
 
