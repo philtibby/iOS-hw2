@@ -10,8 +10,10 @@ import UIKit
 
 let reuseIdentifier = "DayCell";
 
+var tableData2 = [Day]();
+
 //var tableData: [String] = ["1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3"];
-var tableData: [String] = [];
+//var tableData: [String] = [];
 
 
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -21,11 +23,13 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for (var i = 1; i <= 31; ++i) {
-            tableData.append(String(i));
-        }
+        var newDay : Day?;
         
-        print("This shit works");
+        for (var j = 1; j <= 31; ++j) {
+            newDay = Day(Date: j);
+            tableData2.append(newDay!);
+            
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,12 +46,12 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
         func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return tableData.count
+            return tableData2.count
         }
         
         func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
             let cell: Cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! Cell
-            cell.cellday.text = tableData[indexPath.row]
+            cell.cellday.text = String(tableData2[indexPath.row].Date);
             return cell
         }
         
@@ -55,6 +59,9 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
             print("Cell \(indexPath.row) selected")
         }
     
-    //this is a comment
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("segging");
+    }
+    
 
 }
