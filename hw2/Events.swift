@@ -29,6 +29,7 @@ class Day : NSObject {
     
     init (Date : Int) {
         self.Date = Date;
+        self.Events = [Event]();
     }
     
     init (Date : Int, Events : [Event]) {

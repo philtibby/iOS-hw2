@@ -12,6 +12,8 @@ let reuseIdentifier = "DayCell";
 
 var tableData2 = [Day]();
 
+var numIndex : Int?;
+
 //var tableData: [String] = ["1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3"];
 //var tableData: [String] = [];
 
@@ -30,6 +32,18 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
             tableData2.append(newDay!);
             
         }
+        
+        // testing for now
+        
+        var events = [Event]();
+        //var event1 : Event?;
+        let event1 = Event(Name: "Strip club", Time: "1200", Location: "Middleton");
+        events.append(event1);
+        
+        let event2 = Event(Name: "Bar", Time: "1200", Location: "High Noon");
+        events.append(event2);
+        
+        tableData2[3].Events = events;
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -56,11 +70,37 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         }
         
         func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-            print("Cell \(indexPath.row) selected")
+            //print("Cell \(indexPath.row) selected")
+            //TableViewController.events = tableData2[indexPath.row].Events;
+            
+            numIndex = indexPath.row;
+            
+            let myCustomViewController: TableViewController = TableViewController(nibName: nil, bundle: nil);
+            //myCustomViewController.events = tableData2[indexPath.row].Events!;
+            for (var i = 0; i < tableData2[indexPath.row].Events!.count; ++i) {
+                myCustomViewController.events.append(tableData2[indexPath.row].Events![i]);
+            }
+            
+            print("segger is segging");
+            
+            performSegueWithIdentifier("segger", sender: nil);
         }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("segging");
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+
+            let myView = segue.destinationViewController as! TableViewController
+            
+            for (var i = 0; i < tableData2[numIndex!].Events!.count; ++i) {
+                myView.events.append(tableData2[numIndex!].Events![i]);
+            }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if (sender == nil) {
+            return true;
+        } else {
+            return false;
+        }
     }
     
 

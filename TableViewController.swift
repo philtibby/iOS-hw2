@@ -9,6 +9,8 @@
 import UIKit
 
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var events = [Event]();
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +32,12 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5; // change this one
+        return events.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell();
-        cell.textLabel!.text = "Jew";
+        cell.textLabel!.text = events[indexPath.row].Name;
         return cell;
     }
     
