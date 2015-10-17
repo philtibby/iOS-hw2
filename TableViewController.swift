@@ -10,8 +10,9 @@ import UIKit
 
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var events = [Event]();
+    //var events = [Event]();
     var whichDay : Int?;
+    var days = [Day]();
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +34,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count;
+        return days[whichDay!].Events!.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell();
-        cell.textLabel!.text = events[indexPath.row].Name;
+        let event = days[whichDay!].Events![indexPath.row];
+        cell.textLabel!.text = "\(event.Name!) - \(event.Time!) - \(event.Location!)";
         return cell;
     }
     
@@ -48,14 +50,28 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            print("Deleting");
+            //print("Deleting");
+            print(indexPath.row);
+            days[whichDay!].Events!.removeAtIndex(indexPath.row);
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic);
+            
+            
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let myView = segue.destinationViewController as! ViewController;
         
-        myView.events = self.events;
+        if (segue.identifier == "newevent") {
+            let myView = segue.destinationViewController as! ViewController;
+            //myView.events = self.events;
+            myView.whichDay = self.whichDay;
+            myView.days = self.days;
+        } else {
+            let myView = segue.destinationViewController as! CollectionViewController;
+            myView.tableData2 = self.days;
+            myView.firstTime = false;
+            print("segging");
+        }
     }
     
     

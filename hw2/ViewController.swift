@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var events = [Event]();
+    //var events = [Event]();
+    var whichDay : Int?;
+    var days = [Day]();
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +31,12 @@ class ViewController: UIViewController {
         newEvent.Location = locationLabel.text!;
         newEvent.Name = nameLabel.text!;
         
-        self.events.append(newEvent);
+        self.days[whichDay!].Events!.append(newEvent);
         
         let myView = segue.destinationViewController as! TableViewController;
-        myView.events = self.events;
+        //myView.events = self.events;
+        myView.whichDay = self.whichDay;
+        myView.days = self.days;
         
     }
 

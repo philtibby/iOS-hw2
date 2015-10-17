@@ -10,21 +10,21 @@ import UIKit
 
 let reuseIdentifier = "DayCell";
 
-var tableData2 = [Day]();
-
-var numIndex : Int?;
-
-//var tableData: [String] = ["1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3"];
-//var tableData: [String] = [];
-
 
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    var tableData2 = [Day]();
+    
+    var numIndex : Int?;
+    
+    var firstTime = true;
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if (firstTime) {
+
         var newDay : Day?;
         
         for (var j = 1; j <= 31; ++j) {
@@ -32,6 +32,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
             tableData2.append(newDay!);
             
         }
+        
         
         // testing for now
         
@@ -44,6 +45,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         events.append(event2);
         
         tableData2[3].Events = events;
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -83,8 +85,9 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
             /*for (var i = 0; i < tableData2[numIndex!].Events!.count; ++i) {
                 myView.events.append(tableData2[numIndex!].Events![i]);
             }*/
-        myView.events = tableData2[numIndex!].Events!;
+        //myView.events = tableData2[numIndex!].Events!;
         myView.whichDay = numIndex!;
+        myView.days = tableData2;
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {

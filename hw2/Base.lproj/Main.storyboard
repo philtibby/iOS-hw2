@@ -107,15 +107,15 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <animations/>
                                 <items>
-                                    <navigationItem title="Title" id="hLK-eC-vmR">
+                                    <navigationItem title="Events" id="hLK-eC-vmR">
                                         <barButtonItem key="leftBarButtonItem" title="&lt; Go Back" id="72m-WW-G8c">
                                             <connections>
-                                                <segue destination="XEn-9Z-guK" kind="show" id="iak-6g-L97"/>
+                                                <segue destination="XEn-9Z-guK" kind="show" identifier="back" id="iak-6g-L97"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="+" id="mrh-e9-4En">
                                             <connections>
-                                                <segue destination="5RZ-xu-ne0" kind="show" id="aLY-uY-DhL"/>
+                                                <segue destination="5RZ-xu-ne0" kind="show" identifier="newevent" id="aLY-uY-DhL"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
