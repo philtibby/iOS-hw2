@@ -37,7 +37,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         
         var events = [Event]();
         //var event1 : Event?;
-        let event1 = Event(Name: "Strip club", Time: "1200", Location: "Middleton");
+        let event1 = Event(Name: "Special club", Time: "1200", Location: "Middleton");
         events.append(event1);
         
         let event2 = Event(Name: "Bar", Time: "1200", Location: "High Noon");
@@ -70,18 +70,8 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         }
         
         func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-            //print("Cell \(indexPath.row) selected")
-            //TableViewController.events = tableData2[indexPath.row].Events;
             
             numIndex = indexPath.row;
-            
-            let myCustomViewController: TableViewController = TableViewController(nibName: nil, bundle: nil);
-            //myCustomViewController.events = tableData2[indexPath.row].Events!;
-            for (var i = 0; i < tableData2[indexPath.row].Events!.count; ++i) {
-                myCustomViewController.events.append(tableData2[indexPath.row].Events![i]);
-            }
-            
-            print("segger is segging");
             
             performSegueWithIdentifier("segger", sender: nil);
         }
@@ -90,9 +80,11 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
 
             let myView = segue.destinationViewController as! TableViewController
             
-            for (var i = 0; i < tableData2[numIndex!].Events!.count; ++i) {
+            /*for (var i = 0; i < tableData2[numIndex!].Events!.count; ++i) {
                 myView.events.append(tableData2[numIndex!].Events![i]);
-            }
+            }*/
+        myView.events = tableData2[numIndex!].Events!;
+        myView.whichDay = numIndex!;
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {

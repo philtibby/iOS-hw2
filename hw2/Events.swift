@@ -10,15 +10,17 @@ import UIKit
 
 class Event : NSObject {
     
-    var Name : String;
-    var Time: String; // change this from String to something else at some point
-    var Location: String;
+    var Name : String?;
+    var Time: String?; // change this from String to something else at some point
+    var Location: String?;
     
     init (Name: String, Time: String, Location: String) {
         self.Name = Name;
         self.Time = Time;
         self.Location = Location;
     }
+    
+    override init () {}
 
 }
 

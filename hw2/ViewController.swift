@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var events = [Event]();
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,25 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let newEvent = Event();
+        newEvent.Time = timeLabel.text!;
+        newEvent.Location = locationLabel.text!;
+        newEvent.Name = nameLabel.text!;
+        
+        self.events.append(newEvent);
+        
+        let myView = segue.destinationViewController as! TableViewController;
+        myView.events = self.events;
+        
+    }
 
+    @IBOutlet weak var locationLabel: UITextField!
+    
+    @IBOutlet weak var nameLabel: UITextField!
 
+    @IBOutlet weak var timeLabel: UITextField!
 }
 

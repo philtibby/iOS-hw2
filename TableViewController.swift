@@ -11,6 +11,7 @@ import UIKit
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var events = [Event]();
+    var whichDay : Int?;
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let myView = segue.destinationViewController as! ViewController;
+        
+        myView.events = self.events;
+    }
     
-
+    
+    
+    
 }
