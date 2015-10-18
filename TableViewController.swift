@@ -50,8 +50,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            //print("Deleting");
-            print(indexPath.row);
             days[whichDay!].Events!.removeAtIndex(indexPath.row);
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic);
             
@@ -70,7 +68,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             let myView = segue.destinationViewController as! CollectionViewController;
             myView.tableData2 = self.days;
             myView.firstTime = false;
-            print("segging");
         }
     }
     
